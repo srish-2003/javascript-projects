@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:90vh;
+        }
+        .main-container{
+            border:5px solid rgb(246, 11, 128);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+        }
+        h2{
+            font-weight: 1000;
+            font-size: 2em;
+        }
+        .task-bar{
+            padding: 5px;
+            width:80%;
+            margin:10px;
+        }
+        .button-main{
+            padding:10px;
+            font-size:0.9em;
+        }
+        button{
+            color:white;
+            background-color: rgb(246, 11, 128);
+            border:none;
+        }
+        button:hover{
+            border:2px solid rgb(246, 11, 128);
+            background-color: white;
+            color:rgb(246, 11, 128);
+        }
+        li{
+            padding:10px;
+            list-style: none;
+            background-color: rgb(251, 172, 194);
+            font-size: 1em;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container" id="main-container">
+        <h2>TO DO LIST</h2>
+        <input type="text" class="task-bar" id="add-task"
+        placeholder="Add tasks here">
+        <br>
+        <button class="button-main" onclick="addTasks()">Add Task</button>
+        <br>
+        <input type="text" class="task-bar" id="search-task" placeholder="Search tasks here..." oninput="searchTask()">
+        <br>
+        <ul class="display-task" id="display-task"></ul>
+    </div>
+    <script>
+        let tasks=[]
+         function addTasks(){
+            const task=document.getElementById('add-task').value;
+            tasks.push(task)
+            displayTasks();
+         }
+         // some rough code
+        //  let a=['Srish','goyal']
+        //  console.log(a[0].toLowerCase());//doesnt change original array
+        //  console.log(a);
+        function displayTasks(copytasks=tasks){
+            const list=document.getElementById('display-task')
+            list.innerHTML=" ";//dubara bnta hai pura list of ul
+
+            copytasks.forEach((data,index)=>{
+                const listItem=document.createElement('li');
+                const button=document.createElement('button');
+
+                button.textContent='remove';
+                listItem.textContent=data;
+                button.onclick= () =>removeTask(index)
+                listItem.appendChild(button)
+                list.appendChild(listItem)
+            })
+        }
+        function removeTask(index) {
+            tasks.splice(index, 1);
+            displayTasks();
+        }
+
+        function searchTask(){
+            const inputTask=document.getElementById('search-task').value.toLowerCase();
+            console.log(inputTask)
+            const filteredTask=tasks.filter((task)=>
+                task.toLowerCase().includes(inputTask)
+            )
+            console.log(filteredTask);
+            
+            displayTasks(filteredTask);
+        }
+         
+         
+
+    </script>
+</body>
+</html>

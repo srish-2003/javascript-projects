@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Add to cart</title>
+</head>
+<body>
+        <div class="container" id="items-container">
+            <h2>LIST ITEMS</h2>
+            <div class="items-subcontainer">
+                <div class="single-item-container">
+                    <span>Iphone 13</span>
+                    <button onclick="addItems('Iphone 13','43,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 13 Pro</span>
+                    <button onclick="addItems('Iphone 13 Pro','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 14</span>
+                    <button onclick="addItems('Iphone 14','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 14 Pro Max</span>
+                    <button onclick="addItems('Iphone 14 Pro Max','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 15</span>
+                    <button onclick="addItems('Iphone 15','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 15 Pro </span>
+                    <button onclick="addItems('Iphone 15 Pro','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 15 Pro Max</span>
+                    <button onclick="addItems('Iphone 15 Pro Max','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 16</span>
+                    <button onclick="addItems('Iphone 16','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 16 Pro</span>
+                    <button onclick="addItems('Iphone 16 Pro','1,20,000')">Add to cart</button>
+                </div>
+                <div class="single-item-container">
+                    <span>Iphone 16 Pro Max</span>
+                    <button onclick="addItems('Iphone 16 Pro Max','1,20,000')">Add to cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="cart-container">
+            <h2>CART ITEMS</h2>
+            <div id="cart-subcontainer">
+                <!-- yeh part delete hoga -->
+                    <span style="font-size: 1.5rem;" id="cart-single-item-container">Nothing in your cart</span>
+            </div>
+            <button onclick="clearCart()">Clear Cart</button>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+</html>
